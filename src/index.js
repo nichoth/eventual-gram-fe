@@ -1,5 +1,4 @@
-// var React = require('react')
-var { h } = require('react')
+var React = require('react')
 var ReactDOM = require('react-dom')
 
 function Example (props) {
