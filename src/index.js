@@ -7,4 +7,3 @@ function Example (props) {
 }
 
 ReactDOM.render(<Example />, document.getElementById('content'))
-
