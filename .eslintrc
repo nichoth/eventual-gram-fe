@@ -1,7 +1,9 @@
 {
     "extends": [
         "minlint",
-        "plugin:react-hooks/recommended"
+        "plugin:react-hooks/recommended",
+        "eslint:recommended",
+        "plugin:react/recommended"
     ],
     "plugins": [
         "react"
@@ -14,6 +16,7 @@
     },
 
     "parserOptions": {
+        "sourceType": "module",
         "ecmaFeatures": {
             "modules": true,
             "jsx": true
