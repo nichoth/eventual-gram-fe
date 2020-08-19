@@ -6,7 +6,7 @@
     "hooks": {
       "pre-push": "npm run lint && npm test"
     }
-  }
+  },
   "scripts": {
     "start": "npm run build-css && concurrently --kill-others \"npm run serve\" \"npm run sass-watch\"",
     "serve": "env $(cat .env | xargs) budo src/index.js:bundle.js --pushstate --dir=public --live -- -p esmify -t [ babelify --presets [ \"@babel/preset-env\" ] ] -t [ envify --NODE_ENV development ] -dv",
