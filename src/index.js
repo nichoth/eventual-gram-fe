@@ -10,7 +10,7 @@ function connect (state, View) {
     var bus = Bus({ memo: true })
 
     function emit () {
-        return _bus.emit.apply(_bus, arguments)
+        return bus.emit.apply(bus, arguments)
     }
 
     class Connector extends Component {
@@ -27,7 +27,7 @@ function connect (state, View) {
         }
 
         render () {
-            return h(View, xtend(this.props, { emit }), this.props.children)
+            return h(View, xtend(this.props, { emit }))
         }
     }
 
@@ -35,8 +35,8 @@ function connect (state, View) {
 }
 
 function Ev (state) {
-    var view = () => (<div>example</div>)
-    var { bus, view } = connect(state, view)
+    var View = () => (<div>example</div>)
+    var { bus, view } = connect(state, View)
     return { bus, view }
 }
 
