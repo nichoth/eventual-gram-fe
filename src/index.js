@@ -1,8 +1,12 @@
 var React = require('react')
 var ReactDOM = require('react-dom')
 
-function Example (props) {
+function Ev (props) {
     return <div>example</div>
 }
 
-ReactDOM.render(<Example />, document.getElementById('content'))
+Ev.createElement = function (el) {
+    ReactDOM.render(<Ev />, el)
+}
+
+module.exports = Ev
