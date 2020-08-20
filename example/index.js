@@ -1,12 +1,10 @@
 var Ev = require('../src')
-var struct = require('observ-struct')
 
-function subscribe () {
-
+function subscribe (bus, state) {
+    bus.on('foo', ev => state.foo.set('bar'))
 }
 
-var state = struct({})
-var { bus, view } = Ev(state)
+var { bus, view, state } = Ev()
 
 subscribe(bus, state)
 
